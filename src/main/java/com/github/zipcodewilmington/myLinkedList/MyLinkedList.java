@@ -67,10 +67,24 @@ public class MyLinkedList {
         return null;
     }
 
-    private void remove (String key){
-
-
+    private Integer remove (String key){
+       //trailer behind to keep
+        MyNode previousNode = head;
+       MyNode currentNode =head.getNext();
+        while(currentNode!=null&& !currentNode.getData().getKey().equals(key)) {
+           previousNode=currentNode;
+            currentNode = currentNode.getNext();
+        }
+        //conditions to break out
+        if(currentNode==null) {
+            return null;
+        }
+        //now we are linking previous to the one after remove
+        previousNode.setNext(currentNode.getNext());
+        return currentNode.getData().getValue();
     }
+
+
 
     //checking if there is just a head
     //an empty linkedList is considered to be just a head
