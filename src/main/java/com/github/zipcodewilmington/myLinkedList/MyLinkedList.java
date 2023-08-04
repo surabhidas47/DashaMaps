@@ -67,7 +67,7 @@ public class MyLinkedList {
         return null;
     }
 
-    private Integer remove (String key){
+    public Integer remove (String key){
        //trailer behind to keep
         MyNode previousNode = head;
        MyNode currentNode =head.getNext();

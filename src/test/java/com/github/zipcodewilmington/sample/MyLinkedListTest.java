@@ -79,4 +79,23 @@ class MyLinkedListTest {
         Assert.assertEquals(false,actual);
 
     }
+
+
+    @Test
+    public void remove () {
+        MyLinkedList mll = new MyLinkedList("Alopa");
+        String expectedKey = "Sapna";
+        Integer expectedValue = 6;
+        mll.add(expectedKey,expectedValue);
+
+        //when
+        Integer actualValue = mll.remove(expectedKey);
+
+        //then
+
+        Assert.assertEquals(expectedValue,actualValue);
+        Assert.assertEquals(true, mll.isEmpty());
+
+
+    }
 }
